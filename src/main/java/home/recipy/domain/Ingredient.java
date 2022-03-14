@@ -19,6 +19,8 @@ public class Ingredient
     @ManyToOne
     @JoinColumn(name = "recipy_id")
     private  Recipy recipy;
+    @OneToOne(fetch = FetchType.EAGER)
+    private  Unit unit;
 
 
 }
