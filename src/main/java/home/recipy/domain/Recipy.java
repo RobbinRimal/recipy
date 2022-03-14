@@ -3,9 +3,6 @@ package home.recipy.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.engine.internal.Cascade;
-
-import java.security.PrivateKey;
 import java.util.Set;
 
 @Getter
@@ -25,7 +22,7 @@ public class Recipy {
     private String direction;
     //todo add private difficulties
     @Enumerated(value = EnumType.STRING)
-    //enum finally done
+    // todo enum finally done
     private Difficulty difficulty;
     @Lob
     private Byte[] image;
@@ -35,6 +32,12 @@ public class Recipy {
     private Notes notes;
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "recipy")
     private Set<Ingredient> ingredients;
+    @ManyToMany
+    @JoinTable(name = "recipy_categorie",
+            joinColumns = @JoinColumn(name = "recipy_id"),
+            inverseJoinColumns = @JoinColumn(name = "categorie_id"))
+    private  Set<Category> categories;
 
 
 }
+
