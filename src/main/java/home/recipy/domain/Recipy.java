@@ -24,6 +24,9 @@ public class Recipy {
     private String source;
     private String direction;
     //todo add private difficulties
+    @Enumerated(value = EnumType.STRING)
+    //enum finally done
+    private Difficulty difficulty;
     @Lob
     private Byte[] image;
 
