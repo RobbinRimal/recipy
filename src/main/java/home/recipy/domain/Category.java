@@ -6,9 +6,9 @@ import lombok.Setter;
 
 import java.util.Set;
 
-@Entity
-@Getter
 @Setter
+@Getter
+@Entity
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +16,7 @@ public class Category {
     @ManyToMany(mappedBy ="categories")
     private Set<Recipy> recipies;
     private String discription;
+
 }
 /*INSERT INTO unit (UNITOFMESURE) VALUES ('Teaspoon');
 INSERT INTO unit (UNITOFMESURE) VALUES ('Tablespoon');
