@@ -17,3 +17,8 @@ public class Category {
     private Set<Recipy> recipies;
     private String discription;
 }
+/*INSERT INTO unit (UNITOFMESURE) VALUES ('Teaspoon');
+INSERT INTO unit (UNITOFMESURE) VALUES ('Tablespoon');
+INSERT INTO unit (UNITOFMESURE) VALUES ('Cup');
+INSERT INTO unit (UNITOFMESURE) VALUES ('Pinch');
+INSERT INTO unit (UNITOFMESURE) VALUES ('Ounce');*/
