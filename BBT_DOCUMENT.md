@@ -3,7 +3,7 @@
 
 ## 1. Application Logic Documentation
 
-Every teacher has its own timeslots that they can setup. The timeslot is 25 min eg. if a teacher is available from 10 am to 11 am then it starts with 
+      Every teacher has its own timeslots that they can setup. The timeslot is 25 min eg. if a teacher is available from 10 am to 11 am then it starts with 
 
 
    - 10:00 - 10:25 
@@ -76,7 +76,7 @@ Every coin‘s native currency value is determined by Exchange rate and there ca
    
     Our application is built using single monolithic application using Quarkus Framework (Java). The application has its core component like
 
-   
+
 
 
 
