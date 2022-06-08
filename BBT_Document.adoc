@@ -99,12 +99,15 @@ this is the stage where class is canceled by the admin or teacher,class can be c
 * REVIEW
 
 This is a stage where the class is sent to admin in order to review.
+
 * REFUNDED
+
 Refunded is state where parent got the refund and the teacher got the penalty. 
 
 * MISSED
 
 This state represent that teacher was not there to take class on time.
+
 * TRANSFERRED
 
 This represent that the class is transfered from one teacher to another.
