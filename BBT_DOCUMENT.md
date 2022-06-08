@@ -20,8 +20,4 @@ There can be multiple Teachers in same timeslots in that case we have a detailed
 | 10      | 2       | Check if it  has sequential time and matching teacher with the same teacher otherwise go to the next rule.   | 
 | 5      | 3       | Every teacher must get at least one class a day if they have a time slot.|What if there are 5 teachers with no meetings in that day.|
 |4|4|After every teacher has got class a day then we check their number of time slots as a priority to assign|What if all the teachers has at least one class in that day.Simon: 1 timeslot:10, Karl: 1 timeslot:9, Ram:1 timeslot:8 - Use the one that provides more available timeslot?|
-|3|5|Check the usage of timeslots of each teacher, the lower ones get the first priority|What if there are multiple teachers who has similar timeslots and similar booking percentage.
-Simon: 6 timeslots:20 , Karl: 3 timeslot:10
-6/20 ? 30%  , 3/10 : 30%
-here we create multiple path.
-|
+|3|5|Check the usage of timeslots of each teacher, the lower ones get the first priority|What if there are multiple teachers who has similar timeslots and similar booking percentage.|
