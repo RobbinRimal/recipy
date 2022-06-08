@@ -16,7 +16,7 @@ There can be multiple Teachers in same timeslots in that case we have a detailed
 
 | Weight     | Rule | Condition     | How to implement?     |
 | :---        |    :----:   |  :----:       |---: |
-| 10    | 1    | Make sure there is an allocation of guaranteed classes of teachers.  |If there are same guarantees classes values of multiple teacher?  Select two paths and continue the parallel paths accordinly.
+| 10    | 1    | Make sure there is an allocation of guaranteed classes of teachers.  |If there are same guarantees classes values of multiple teacher?  Select two paths and continue the parallel paths accordinly.<br/>
 Mike: 3 , Simon: 3 ? 
 
 If there is a history of meeting where Simon teaches this users then Rule 2 overrides the Rule 1. 
