@@ -16,8 +16,13 @@ There can be multiple Teachers in same timeslots in that case we have a detailed
 
 | Weight     | Rule | Condition     | How to implement?     |
 | :---        |    :----:   |  :----:       |---: |
-| 10    | 1    | Make sure there is an allocation of guaranteed classes of teachers.  |If there are same guarantees classes values of multiple teacher?  Select two paths and continue the parallel paths accordinly.<br/>Mike: 3 , Simon: 3 ? <br/>If there is a history of meeting where Simon teaches this<br/> users<br/>then Rule 2 overrides the Rule 1. Mike: 1 (guaranteed class) , Simon: 0 (Previous meeting) ?
-<br/>Double class or (n) number of classes sequence (25 minutes difference between old and new class)<br/>
+| 10    | 1    | Make sure there is an allocation of guaranteed classes of teachers.  |If there are same guarantees classes values of multiple teacher?  Select two paths and continue the parallel paths accordinly.<br/>
+Mike: 3 , Simon: 3 ?<br/> 
+
+If there is a history of meeting where Simon teaches this users then Rule 2 overrides the Rule 1. 
+Mike: 1 (guaranteed class) , Simon: 0 (Previous meeting) ? 
+<br/>
+Double class or (n) number of classes sequence (25 minutes difference between old and new class)
 Must always put old teacher as priority while selecting booking.|
 
 
