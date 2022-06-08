@@ -36,9 +36,9 @@ Meeting has primarily 13 types of state:
 - PRE_SCHEDULED
 - RE_SCHEDULED
 - SCHEDULED
->Scheduled one is state for booked meeting which has confirmed student and its timeslot gets reserved  
+>Scheduled one is state for booked meeting which has confirmed student and its timeslot gets reserved
 - COMPLETED
->This meeting is for the completed meeting successfully without any problem. Normally this means the teacher gets fully paid and student gets debited by x number of coin(s).
+>This meeting is for the completed meeting successfully without any problem. Normally this means the teacher gets fully paid and student gets debited by x number of coins.
 - CANCELLED
 - WAIT_APPROVAL
 - REVIEW
@@ -51,4 +51,8 @@ Meeting has primarily 13 types of state:
 A meeting has its predefined rules for changing its state from  **SCHEDULED** to many different states as per the rules.
 
 
- 
+| Rule      | Condition | From State    |To State|
+| :---        |    :----:   | :----: |    ---: |
+| 1     | Teacher joined meeting before 5 minutes of meeting start time student did not joined the meeting       | SCHEDULED   | COMPLETED   |
+| 2   | Student joined meeting after 5 min of start meeting       | SCHEDULED      | REFUNDED|
+| 3   | Neighter student joined the meeting nor teacher        | SCHEDULED      | REFUNDED|
