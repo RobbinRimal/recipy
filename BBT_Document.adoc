@@ -121,3 +121,50 @@ This status represent that the teacher has requested to transfer his class to ot
 A meeting has its predefined rules for changing its state from  **SCHEDULED** to many different states as per the rules.
 
  
+
+[cols="1,5,2,2"]
+|===
+|Rule|Condition |From State |To State
+
+|1
+|Teacher joined meeting before 5 minutes of meeting start time student did not joined the meeting 
+|SCHEDULED
+|COMPLETED
+
+|2
+|Student joined meeting after 5 min of start meeting
+|SCHEDULED
+|REFUNDED
+
+|3
+|Neighter student joined the meeting nor teacher 
+|SCHEDULED
+|REFUNDED
+|===
+
+|
+
+
+== 3. Coin Lifecycle
+
+ Coin is a virtual currency in BigBigTutuor system. Every coin is representation of native currency value for a single class. Every coin has its state directly linked with the Meeting entity. A coin has been distinctly managed by two types:
+    
+* STANDARD
+      
+   Standard coin are the normal coin where the coin is simply  assigned to random teacher according to the booking algorithm
+   
+* PREMIUM
+    
+    Every premium coin has higher native currency value than the Standard Coin and this coin has a feature to select preferred Teacher from the Teacher list during the booking phase. 
+
+Every coin‘s native currency value is determined by Exchange rate and there can only be one exchange rate set for each coin. A coin has its own hash code which makes it unique and spendable to preferred user. The spend of coin is mathematically calculated by using Coin history data.  There are more than one history for each coin. 
+
+## 4. Internal Application Architecture
+   
+Our application is built using single monolithic application using Quarkus Framework (Java). The application has its core component like
+   
+image::internal.svg[600,700]
+
+>Source : s3://bbt-media/docs/application-arch.svg
+
+
