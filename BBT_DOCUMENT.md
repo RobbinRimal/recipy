@@ -3,7 +3,7 @@
 
 ## 1. Application Logic Documentation
 
-      Every teacher has its own timeslots that they can setup. The timeslot is 25 min eg. if a teacher is available from 10 am to 11 am then it starts with 
+ Every teacher has its own timeslots that they can setup. The timeslot is 25 min eg. if a teacher is available from 10 am to 11 am then it starts with 
 
 
    - 10:00 - 10:25 
@@ -63,18 +63,20 @@ A meeting has its predefined rules for changing its state from  **SCHEDULED** to
  Coin is a virtual currency in BigBigTutuor system. Every coin is representation of native currency value for a single class. Every coin has its state directly linked with the Meeting entity. A coin has been distinctly managed by two types:
     
     -STANDARD
-    Standard coin are the normal coin where the coin is simply  assigned to random teacher according to the booking algorithm
+    >Standard coin are the normal coin where the coin is simply  assigned to random teacher according to the booking algorithm
    
       
       -PREMIUM
-    Every premium coin has higher native currency value than the Standard Coin and this coin has a feature to select preferred Teacher from the Teacher list during the booking phase. 
+    >Every premium coin has higher native currency value than the Standard Coin and this coin has a feature to select preferred Teacher from the Teacher list during the booking phase. 
 
 Every coin‘s native currency value is determined by Exchange rate and there can only be one exchange rate set for each coin. A coin has its own hash code which makes it unique and spendable to preferred user. The spend of coin is mathematically calculated by using Coin history data.  There are more than one history for each coin. 
 
 
 ## 4. Internal Application Architecture
    
-    Our application is built using single monolithic application using Quarkus Framework (Java). The application has its core component like
+   Our application is built using single monolithic application using Quarkus Framework (Java). The application has its core component like
+
+![The San Juan Mountains are beautiful!](application-arch (1).svg "San Juan Mountains")
 
 
 
