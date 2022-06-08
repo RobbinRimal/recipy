@@ -1,0 +1,120 @@
+= Application Logic Documentation
+
+
+== 1. Application Logic Documentation
+
+Every teacher has its own timeslots that they can setup. The timeslot is 25 min eg. if a teacher is available from 10 am to 11 am then it starts with 
+
+* 10:00 - 10:25 
+* 10:30 - 10:55
+* 11:00 - 11:25
+* 11:30 - 11:55
+
+There can be multiple Teachers in same timeslots in that case we have a detailed logic for race conditional teacher selection.
+
+
+[cols="1,1,5,10"]
+|===
+| Weight | Rule | Condition | How to implement?
+
+|10
+|1
+|Make sure there is an allocation of guaranteed classes of teachers.If there are same guarantees classes values of multiple teacher?  Select two paths and continue the parallel paths accordinly.
+|If there are same guarantees classes values of multiple teacher?  Select two paths and continue the parallel paths accordinly.
+Mike: 3 , Simon: 3 ? 
+
+If there is a history of meeting where Simon teaches this users then Rule 2 overrides the Rule 1. 
+Mike: 1 (guaranteed class) , Simon: 0 (Previous meeting) ? 
+
+Double class or (n) number of classes sequence (25 minutes difference between old and new class)
+Must always put old teacher as priority while selecting 
+booking.
+
+|10
+|2
+|Check if it  has sequential time and matching teacher with the same teacher otherwise go to the next rule.
+
+
+|
+
+|5
+|3
+|Every teacher must get at least one class a day if they have a time slot.
+|What if there are 5 teachers with no meetings in that day. 
+Simon: 0 timeslot:10,  Karl: 0 timeslot:9, Stephen:0 timeslot:8, Levi:0 timeslot:8, Ram:0 timeslot:8 - Use the one that provides more available timeslot?
+
+What there are 2 teachers with no meetings and both of them has equal free timeslots
+Simon: 0 timeslots:10 , Karl: 0 timeslot:10
+Create brand new path for both of the teacher.
+
+
+|4
+|4
+|After every teacher has got class a day then we check their number of time slots as a priority to assign
+
+
+|What if all the teachers has at least one class in that day.
+Simon: 1 timeslot:10, Karl: 1 timeslot:9, Ram:1 timeslot:8 - Use the one that provides more available timeslot?
+
+What if there are 2 teachers with already have at least one meeting booked and both of them has equal free timeslots
+Simon: 2 timeslots:10 , Karl: 3 timeslot:10
+2/10 ? 20%  , 3/10 : 30%
+So the Simon must get the booking.
+
+
+|3
+|5
+|Check the usage of timeslots of each teacher, the lower ones get the first priority
+|What if there are multiple teachers who has similar timeslots and similar booking percentage.
+Simon: 6 timeslots:20 , Karl: 3 timeslot:10
+6/20 ? 30%  , 3/10 : 30%
+here we create multiple path.
+
+|===
+
+== 2. Meeting Lifecycle
+
+Meeting has primarily 13 types of state:
+
+
+* AVAILABLE
+
+This is the first state where every timeslot created by Teacher gets pre-set with this State. Also this state does not contain any student data because it is only for teacher data.
+
+* PRE_SCHEDULED
+* RE_SCHEDULED
+* SCHEDULED
+
+Scheduled one is state for booked meeting which has confirmed student and its timeslot gets reserved
+
+* COMPLETED
+
+This meeting is for the completed meeting successfully without any problem. Normally this means the teacher gets fully paid and student gets debited by x number of coins.
+
+* CANCELLED
+
+this is the stage where class is canceled by the admin or teacher,class can be canceled for premium coin only by teacher . 
+
+* WAITAPPROVAL
+* REVIEW
+
+This is a stage where the class is sent to admin in order to review.
+* REFUNDED
+Refunded is state where parent got the refund and the teacher got the penalty. 
+
+* MISSED
+
+This state represent that teacher was not there to take class on time.
+* TRANSFERRED
+
+This represent that the class is transfered from one teacher to another.
+
+* REQUEST_TRANSFER
+
+This status represent that the teacher has requested to transfer his class to other teacher. 
+
+* DELETED
+
+A meeting has its predefined rules for changing its state from  **SCHEDULED** to many different states as per the rules.
+
+ 
