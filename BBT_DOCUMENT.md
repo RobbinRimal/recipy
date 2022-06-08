@@ -42,7 +42,9 @@ These condition are all set by the system during the booking phase transmitted f
 - CANCELLED
 - WAIT_APPROVAL
 - REVIEW
+   >This is a stage where the class is sent to admin in order to review.
 - REFUNDED
+   >Refunded is state where parent got the refund and the teacher got the penalty. 
 - MISSED
 - TRANSFERRED
 - REQUEST_TRANSFER
