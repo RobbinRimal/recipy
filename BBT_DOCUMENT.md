@@ -24,7 +24,31 @@ There can be multiple Teachers in same timeslots in that case we have a detailed
 
 These condition are all set by the system during the booking phase transmitted from websocke protocol. 
 
-## 1 Meeting Lifecycle
+## 2. Meeting Lifecycle
+Meeting has primarily 13 types of state:
 
-### 1. Quarkus 
-### 1. This is quarkus 
+
+
+- AVAILABLE
+
+>This is the first state where every timeslot created by Teacher gets pre-set with this State. Also this state does not contain any student data because it is only for teacher data.
+
+- PRE_SCHEDULED
+- RE_SCHEDULED
+- SCHEDULED
+>Scheduled one is state for booked meeting which has confirmed student and its timeslot gets reserved  
+- COMPLETED
+>This meeting is for the completed meeting successfully without any problem. Normally this means the teacher gets fully paid and student gets debited by x number of coin(s).
+- CANCELLED
+- WAIT_APPROVAL
+- REVIEW
+- REFUNDED
+- MISSED
+- TRANSFERRED
+- REQUEST_TRANSFER
+- DELETED
+
+A meeting has its predefined rules for changing its state from  **SCHEDULED** to many different states as per the rules.
+
+
+ 
