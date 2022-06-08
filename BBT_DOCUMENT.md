@@ -55,7 +55,7 @@ A meeting has its predefined rules for changing its state from  **SCHEDULED** to
 | :---        |    :----:   | :----: |    ---: |
 | 1     | Teacher joined meeting before 5 minutes of meeting start time student did not joined the meeting       | SCHEDULED   | COMPLETED   |
 | 2   | Student joined meeting after 5 min of start meeting       | SCHEDULED      | REFUNDED|
-| 3   | Neighter student joined the meeting nor teacher        | SCHEDULED      | REFUNDED|
+| 3   | Neighter student joined the meeting nor teacher        | SCHEDULED      | REFUNDED (Double)|
 
 
 ### 3. Coin Lifecycle
