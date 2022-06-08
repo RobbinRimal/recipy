@@ -23,3 +23,5 @@ There can be multiple Teachers in same timeslots in that case we have a detailed
 |3|5|Check the usage of timeslots of each teacher, the lower ones get the first priority|What if there are multiple teachers who has similar timeslots and similar booking percentage.|
 
 These condition are all set by the system during the booking phase transmitted from websocke protocol. 
+
+## 1. Meeting Lifecycle
